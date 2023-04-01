@@ -5,17 +5,13 @@ import {
   TextInputBase,
   TextInput,
   ScrollView,
-  Image,
 } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
-import Fontisto from "react-native-vector-icons/Fontisto";
-
+import { Icon as Icon1 } from "react-native-vector-icons/Octicons";
 import users from "../assets/data/users.json";
-import instaImg from "../assets/images/instagram_text.jpg";
-import messengerImg from "../assets/images/messenger_icon.jpg";
 
-const Home = () => {
+const Search = () => {
   return (
     <SafeAreaView
       style={{
@@ -24,26 +20,21 @@ const Home = () => {
         // justifyContent: "space-between",
       }}
     >
-      <View
-        style={{
-          width: "100%",
-          flexDirection: "row",
-          // flex: 1,
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <View style={{ height: 55, width: 180 }}>
-          <Image style={{ height: "100%", width: "100%" }} source={instaImg} />
+      <View>
+        <View style={{ backgroundColor: "white", width: "100%" }}>
+          {/* <Text
+          style={{
+              backgroundColor: "white",
+              // justifyContent: "flex-start",
+              // alignItems: "flex-start",
+            }}
+            >
+            Home
+        </Text> */}
         </View>
-        <View style={{ flexDirection: "row" }}>
-          <Icon name="heart" size={30} color="grey" />
-          <View style={{ height: 30, width: 30, marginLeft: 10 }}>
-            <Image
-              style={{ height: "100%", width: "100%" }}
-              source={messengerImg}
-            />
-          </View>
+        <View style={{ flexDirection: "row", padding: 15 }}>
+          <Icon name="search" size={30} color="grey" />
+          <TextInput placeholder="Search..." />
         </View>
       </View>
 
@@ -93,7 +84,7 @@ const Home = () => {
 
             color: "red",
             width: "100%",
-            zIndex: 9,
+            zIndex: 999999,
           }}
         >
           {/* <Text
@@ -125,4 +116,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Search;
