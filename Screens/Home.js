@@ -14,8 +14,16 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 import users from "../assets/data/users.json";
 import instaImg from "../assets/images/instagram_text.jpg";
 import messengerImg from "../assets/images/messenger_icon.jpg";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+  const navigation = useNavigation();
+
+  console.log("aaaaa");
+
+  const gotoSearch = () => {
+    navigation.navigate("Search");
+  };
   return (
     <SafeAreaView
       style={{
@@ -61,7 +69,7 @@ const Home = () => {
           <Text style={{ fontSize: 20, fontWeight: 600 }}>Username</Text>
         </View>
         {users.map((el, index) => (
-          <View style={{ padding: 5 }}>
+          <View key={index} style={{ padding: 5 }}>
             <View
               key={`${index}_container`}
               style={{
@@ -114,7 +122,7 @@ const Home = () => {
           }}
         >
           <Icon name="home" size={30} color="grey" />
-          <Icon name="search" size={30} color="grey" />
+          <Icon name="search" onPress={gotoSearch} size={30} color="grey" />
           <Icon name="plus-square" size={30} color="grey" />
           <Icon name="play" size={30} color="grey" />
           <Icon name="user" size={30} color="grey" />

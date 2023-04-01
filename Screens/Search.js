@@ -52,7 +52,7 @@ const Search = () => {
           <Text style={{ fontSize: 20, fontWeight: 600 }}>Username</Text>
         </View>
         {users.map((el, index) => (
-          <View style={{ padding: 5 }}>
+          <View key={index} style={{ padding: 5 }}>
             <View
               key={`${index}_container`}
               style={{
